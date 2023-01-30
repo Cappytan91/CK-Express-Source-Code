@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>CK-Express</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            body {
+                font-family: sans-serif;
+                font-weight: 300;
+                font-size: .75em;
+                color: white;
+                text-align: center;
+                margin: 0 auto;
+            }
+            #content {
+                height: 100%;
+            }
+            header {
+                top: 40%;
+                transform: translateY(-50%);
+                position: relative;
+            }
+            h1 {
+                font-weight: 300;
+                font-size: 50px;
+                text-align: center;
+            }
+            .description {
+                text-align: left;
+            }
+            .description-container {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 24.7em;
+            }
+            .description-container.not-supported {
+                width: 32em;
+            }
+        </style>
+        <script src="ckSettings.js"></script>
+    </head>
+    <body bgcolor='#2b3a42'>
+        <div id='content'>
+            <header>
+                <h1>CK-Express</h1>
+                <div class="description-container">
+                    <h2 class="description"></h2>
+                </div>
+            </header>
+        </div>
+    </body>
+</html>

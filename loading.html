@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <head>
+        <title>CK-Express</title>
+        <style>
+            .loader {
+                border: 16px solid #f3f3f3;
+                border-top: 16px solid #757677;
+                border-radius: 50%;
+                width: 120px;
+                height: 120px;
+                animation: spin 2s linear infinite;
+                margin: 0 auto;
+            }
+
+            .vertical-center {
+                margin: 0;
+                position: relative;
+                top: 20%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(50%);
+            }
+
+            .vertical-center.new-installation-container {
+                top: 0%;
+            }
+
+            html, body {
+                height: 100%;
+            }
+
+            .title {
+                font-size: 30px;
+                font-weight: 400;;
+                text-align: center;
+                margin-top: 50px;
+            }
+            .new-installation {
+                display: none;
+            }
+            .new-installation.show {
+                margin-top: 20px;
+            }
+            .show {
+                display: block;
+            }
+            @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+            }
+        </style>
+        <script src="loading.js"></script>
+    </head>
+    <body>
+        <div class="vertical-center">
+            <div class="loader"></div>
+            <div class="title">Initializing...</div>
+            <div class="new-installation title">Please wait 5 minutes and don't turn off your device</div>
+        </div>
+    </body>
+</html>

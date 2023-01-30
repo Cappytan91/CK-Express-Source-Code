@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+    <head>
+        <style>
+            body {
+                width: 300px;
+            }
+            span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .toggle span {
+                width: 50px;
+                height: 20px;
+                border-radius: 20px;
+                border: 1px solid #E5E5E5;
+                border-color: rgba(0,0,0,.1);
+                position: relative;
+                box-sizing: border-box;
+                background-color: #999;
+                line-height: 20px;
+            }
+            .toggle input[type=checkbox] {
+                position: absolute;
+                margin: 2px 0;
+                cursor: not-allowed;
+                opacity: 0;
+                box-sizing: border-box;
+            }
+            .toggle[active=true] span {
+                background-color: #77dd77;
+                text-align: left;
+                padding-left: 5px;
+                color: white;
+            }
+            .toggle[active=false] span {
+                text-align: right;
+                padding-right: 5px;
+            }
+            .label {
+                margin-right: 10px;
+                margin-left: 5px;
+                width: 30%;
+            }
+            .text-center {
+                text-align: center;
+            }
+            .toggle[active=true] span:after {
+                left: 31px;
+            }
+            .toggle span:after {
+                width: 16px;
+            }
+            .toggle span:after {
+                content: "";
+                position: absolute;
+                background-color: #fff;
+                width: 16px;
+                top: 1px;
+                bottom: 1px;
+                left: 1px;
+                -moz-border-radius: 30px;
+                -webkit-border-radius: 30px;
+                border-radius: 30px;
+                -moz-box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+                -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+                box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+                -webkit-transition: all .2s ease;
+                -moz-transition: all .2s ease;
+                -ms-transition: all .2s ease;
+                -o-transition: all .2s ease;
+                transition: all .2s ease;
+            }
+            .error-message {
+                color: red;
+                font-weight: 600;
+                margin-left: 5px;
+            }
+            .margin-top-5 {
+                margin-top: 5px;
+            }
+            .flex-row {
+                display: flex;
+                flex-direction: row;
+            }
+            .flex-column {
+                display: flex;
+                flex-direction: column;
+            }
+            .bold {
+                font-weight: 600;
+            }
+            .green {
+                color: #95b75d;
+            }
+            .red {
+                color: #b64645;
+            }
+            .grow-no-basis {
+                flex-basis: 0;
+                flex-grow: 1;
+            }
+            .noselect {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+            }
+            #proxyToggle[disabled=disabled] {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+            #proxyToggle:hover {
+                cursor: pointer;
+            }
+            #version {
+                display: inline-block;
+                margin-left: 5px;
+            }
+            .hidden {
+                display: none;
+            }
+        </style>
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+        <h3 class="text-center">CK-Express<span id=version></span></h3>
+        <div class="flex-row">
+            <span class="label bold">Username</span>
+            <span id="username"></span>
+        </div>
+        <div class="margin-top-5 flex-row">
+            <span class="label bold">Domain</span>
+            <span id="domain"></span>
+        </div>
+        <div class="margin-top-5 flex-row">
+            <span class="label bold">Startup</span>
+            <span id="startup"></span>
+        </div>
+        <div class="margin-top-5 flex-row">
+            <span class="label bold">Model check</span>
+            <span id="modelCheck"></span>
+        </div>
+        <div class="margin-top-5 flex-row">
+            <span class="label bold">Model</span>
+            <span id="model"></span>
+        </div>
+        <div class="margin-top-5 flex-row">
+            <span class="label bold">Mode</span>
+            <span id="mode"></span>
+        </div>
+        <div class="margin-top-5 flex-row"  id="proxyServerStatusContainer">
+            <span class="label bold">S/N - Device ID</span>
+            <span id="serialNumber"></span>
+        </div>
+        <div class="margin-top-5 flex-row hidden">
+            <span class="label bold">Message</span>
+            <span class="grow-no-basis" id="message"></span>
+        </div>
+    </body>
+</html>

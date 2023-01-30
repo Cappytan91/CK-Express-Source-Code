@@ -1,0 +1,25 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+	"version": "1.1.13",
+	"name": "CK-Express TP",
+	"short_name": "CK-Express TP",
+	"manifest_version": 2,
+	"background": {
+		"scripts": ["jquery-1.11.1.min.js", "publishSubscribe.js", "common.js", "base32.js", "captivePortal.js","doh.js", "onprem.js", "background.js"]
+	},
+	"browser_action": {
+		"default_icon": "img/ck19x.png",
+		"default_popup" :   "popup.html"
+	},
+	"description": "ContentKeeper Technologies Cloud-based Internet Filtering and Security System",
+	"icons": {
+		"128": "img/ck.ico",
+		"16": "img/ck.ico",
+		"32": "img/ck.ico",
+		"48": "img/ck.ico"
+	},
+	"permissions": [ "identity", "identity.email", "webNavigation", "<all_urls>", "proxy", "tabs", "enterprise.deviceAttributes", "enterprise.hardwarePlatform" ],
+	"web_accessible_resources": [ "loading.html", "ckSettings.html", "img/ck19x.png","img/ckgreenThick19x.png", "ckInitializing.html", "img/ckInitializing1.png", "img/ckInitializing2.png", "img/ckInitializing3.png", "img/ckInitializing4.png", "img/ckInitializing5.png", "img/ckInitializing6.png"],
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
